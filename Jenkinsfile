@@ -1,13 +1,6 @@
 pipeline {
  agent any
-  stages {
-    stage('Clone') {
-      steps {
-        git branch: "master",
-            url: "https://github.com/MrWalshyType2/ticketmagpie.git"
-      }
-    }
-   
+  stages {   
     stage('Test') {
       steps {
         sh "mvn clean test"
