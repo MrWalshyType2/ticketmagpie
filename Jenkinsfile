@@ -1,23 +1,27 @@
 pipeline {
  agent any
   stages {
+    stage('Clone') {
+      steps {
+        sh "git clone https://github.com/MrWalshyType2/ticketmagpie.git"
+      }
+    }
+   
     stage('Test') {
       steps {
-        echo "Testing"
-        mvn clean test
+        sh "mvn clean test"
       }
     }
     
     stage('Build') {
       steps {
-        echo "Building"
-        mvn clean install
+        sh "mvn clean install"
       }
     }
     
     stage('Deploy') {
       steps {
-        echo "Deploying"
+        
       }
     }
   }
