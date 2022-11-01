@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        sh "git clone https://github.com/MrWalshyType2/ticketmagpie.git"
+        git branch: "master",
+            url: "https://github.com/MrWalshyType2/ticketmagpie.git"
       }
     }
    
